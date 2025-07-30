@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Perro Melo">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Menú digital de Perro Melo - Cocina Urbana y algo más">
+    
+
+    <title>Perro Melo - Cocina Urbana</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- PWA Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="image/Logo-PerroMelo.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/Logo-PerroMelo.jpg">
+    <link rel="apple-touch-icon" sizes="152x152" href="image/Logo-PerroMelo.jpg">
+    <link rel="apple-touch-icon" sizes="120x120" href="image/Logo-PerroMelo.jpg">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Install Button for Android -->
+    <button id="installBtn" class="btn btn-warning" style="display: none; position: fixed; top: 10px; right: 10px; z-index: 1000; padding: 10px 20px; border-radius: 25px; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.3); color: #000;">
+        <i class="fas fa-download"></i> Instalar App
+    </button>
+
+    <!-- Install Banner for iPhone -->
+    <div id="ios-install-banner" class="install-banner" style="display: none;">
+        <div class="install-content">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Para instalar esta app en iPhone:</span>
+        </div>
+        <div class="install-steps">
+            <div class="step">
+                <span class="step-number">1</span>
+                <span>Toca Compartir (<i class="fas fa-share"></i>)</span>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <span>Selecciona "Agregar a inicio"</span>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <span>Toca "Agregar". Y así de fácil te llevas nuestro Menú</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="image/Logo-PerroMelo6.jpg" alt="Perro Melo Logo" class="logo-image">
+            </div>
+            <div class="brand-text">
+                <h1>NUESTRO MENÚ</h1>
+                <div class="tagline">Cocina urbana y algo más...</div>
+            </div>
+        </div>
+        <h2 class="menu-title">Horario</h2>
+        <p class="hours">Todos los días de 6 PM a 1 AM</p>
+    </header>
+
+    <!-- Menu Categories -->
+    <section class="menu-categories">
+        <div class="category-grid">
+            <button class="category-btn" data-category="perros">
+                <i class="fas fa-hotdog"></i>
+                <span>Perros Calientes</span>
+            </button>
+            <button class="category-btn" data-category="salchipapas">
+                <i class="fas fa-french-fries"></i>
+                <span>Salchipapas</span>
+            </button>
+            <button class="category-btn" data-category="hamburguesas">
+                <i class="fas fa-hamburger"></i>
+                <span>Hamburguesas</span>
+            </button>
+            <button class="category-btn" data-category="picadas">
+                <i class="fas fa-utensils"></i>
+                <span>Picadas</span>
+            </button>
+            <button class="category-btn" data-category="chuzo">
+                <i class="fas fa-drumstick-bite"></i>
+                <span>Chuzo de pollo</span>
+            </button>
+            <button class="category-btn" data-category="adiciones">
+                <i class="fas fa-plus"></i>
+                <span>Adiciones</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <main class="menu-content">
+        <!-- PERROS Section -->
+        <section id="perros" class="menu-section active">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>PERRO MELO</h3>
+                        <p class="description">(Ensalada dulce, salchicha tradicional, tocineta, ripio de papa, queso, salsas)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 14.000</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20un%20Perro%20Melo" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>RANCHERO DE LA CASA</h3>
+                        <p class="description">(Ensalada dulce, salchicha ranchera, tocineta, ripio de papa, queso, salsas)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 16.000</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20un%20Ranchero%20de%20la%20Casa" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>URBANO DOG</h3>
+                        <p class="description">(Ensalada dulce, salchicha suiza, tocineta doble, ripio de papa, queso doble, salsas)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 18.000</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20un%20Urbano%20Dog" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SALCHIPAPAS Section -->
+        <section id="salchipapas" class="menu-section">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>SALCHIMELITA</h3>
+                        <p class="description">(Papa, salchicha, queso, salsas al gusto)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 16.000</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Salchimelita" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>SALCHIMELA</h3>
+                        <p class="description">(Papa, butifarra, chorizo cóctel, salchicha, tocineta, doble queso, salsas al gusto)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 22.000</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Salchimela" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>SALCHIMELISIMA</h3>
+                        <p class="description">(Papa, butifarra, chorizo cóctel, salchicha ranchera, doble queso, salsas, maíz tierno)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 29.500</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Salchimelisima" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>CHORIMELA</h3>
+                        <p class="description">(Papa, butifarra, chorizo cóctel, chorizo de ternera, doble queso, salsas, maíz tierno)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 29.500</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Chorimela" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HAMBURGUESAS Section -->
+        <section id="hamburguesas" class="menu-section">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="imageProductos/Hamburguesa-Mela-Classic.jpg" alt="Mela Clasic" class="product-image">
+                    </div>
+                    <div class="item-info">
+                        <h3>MELA CLÁSIC</h3>
+                        <p class="description">(Pan artesanal, carne de res 150 gr, tocineta, queso, aros de cebolla, tomate y lechuga fresca, papas a la francesa)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 16.000</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Mela%20Clasic" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>DOBLE MELA</h3>
+                        <p class="description">(Pan artesanal, doble carne de res, doble queso, aros de cebolla, tomate y lechuga fresca, doble tocineta, salsas, papas a la francesa)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 26.000</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Doble%20Mela" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>CALLEJERA MELA</h3>
+                        <p class="description">(Pan dorado, carne de res, salchicha ranchera, doble queso, aros de cebolla, tomate y lechuga fresca, doble tocineta, salsas, papas a la francesa)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 29.500</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Callejera%20Mela" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PICADAS Section -->
+        <section id="picadas" class="menu-section">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>LA PERRA</h3>
+                        <p class="description">(Papas, carne de res, pollo - cerdo - salchicha ranchera, butifarra, chorizo cóctel, maíz tierno, queso, ripio de papas y salsas)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 40.000</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20La%20Perra" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>LA PERRA XL</h3>
+                        <p class="description">(Papa, carne res, carne de cerdo-pollo-, chorizo ternera, butifarra, chorizo cóctel, maíz tierno, queso, ripio de papa, salsas)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 58.000</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20La%20Perra%20XL" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHUZO Section -->
+        <section id="chuzo" class="menu-section">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>CHUZO DE POLLO</h3>
+                        <p class="description">(Ensalada dulce, papa a la francesa, chorizo cóctel, butifarra, salsas)</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 19.500</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20un%20Chuzo%20de%20Pollo" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADICIONES Section -->
+        <section id="adiciones" class="menu-section">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h3>ADICIONES X</h3>
+                        <p class="description">Adiciones y extras adicionales</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="price">$ 4.000</div>
+                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20Adiciones%20X" class="order-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="address">
+            <h3>Dirección</h3>
+            <a href="https://goo.gl/maps/Gx6PZ5cGm5Dbrrzp9?g_st=aw" target="_blank" style="text-decoration: none; color: inherit;">
+                <p><i class="fas fa-map-marker-alt"></i> Cra 26 # 5-59 Frente las torres de Asovivienda. Caucasia Antioquia</p>
+            </a>
+        </div>
+        <div class="contact">
+            <h3>Contáctanos</h3>
+            <div class="contact-icons">
+                <a href="tel:+573001708326" class="contact-icon phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="https://instagram.com/PERROMELO_COCINAURBANA" class="contact-icon facebook">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/573001708326" class="contact-icon whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Perro Melo. Todos los derechos reservados.</p>
+        <p>Emil Jiménez Ortiz - Desarrollador Web</p>
+        <a href="https://wa.me/+573192364724?text=Hola,%20quiero%20mi%20propio%20menú%20digital." class="btn btn-success" target="_blank" style="text-decoration: none; display: inline-block; margin-top: 15px; padding: 8px 18px; border-radius: 20px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; background: #4caf50; color: white; border: none;">
+            <i class="fab fa-whatsapp"></i> Contáctame
+        </a>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- PWA Installation Script -->
+    <script>
+        // PWA Installation Logic
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
+        const iosInstallBanner = document.getElementById('ios-install-banner');
+
+        // Detect device type
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isAndroid = /Android/.test(navigator.userAgent);
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+
+        console.log('Device detection:', { isIOS, isAndroid, isStandalone });
+
+        // Show appropriate installation method based on device
+        if (isIOS && !isStandalone) {
+            // Show iOS installation banner
+            iosInstallBanner.style.display = 'block';
+            console.log('iOS device detected - showing iOS installation banner');
+        } else if (isAndroid && !isStandalone) {
+            // For Android, we'll show a manual install button if beforeinstallprompt doesn't fire
+            console.log('Android device detected - waiting for install prompt');
+            
+            // Show manual install instructions for Android after a delay
+            setTimeout(() => {
+                if (!deferredPrompt && !isStandalone) {
+                    installBtn.style.display = 'block';
+                    installBtn.innerHTML = '<i class="fas fa-info-circle"></i> Instalar App';
+                    installBtn.className = 'btn btn-info';
+                    console.log('Showing manual Android install button');
+                }
+            }, 3000);
+        } else {
+            // Desktop or other devices
+            console.log('Desktop or other device detected');
+        }
+
+        // Listen for the beforeinstallprompt event (Android)
+        window.addEventListener('beforeinstallprompt', (e) => {
+            console.log('beforeinstallprompt event fired');
+            // Prevent Chrome 67 and earlier from automatically showing the prompt
+            e.preventDefault();
+            // Stash the event so it can be triggered later
+            deferredPrompt = e;
+                         // Show the install button for Android
+             if (isAndroid && !isStandalone) {
+                 installBtn.style.display = 'block';
+                 installBtn.innerHTML = '<i class="fas fa-download"></i> Instalar App';
+                 installBtn.className = 'btn btn-warning';
+                 installBtn.style.color = '#000';
+                 console.log('Android install prompt available - showing install button');
+             }
+        });
+
+        // Install button click handler (Android)
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                // Show the install prompt
+                deferredPrompt.prompt();
+                // Wait for the user to respond to the prompt
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`User response to the install prompt: ${outcome}`);
+                // Clear the deferredPrompt variable
+                deferredPrompt = null;
+                // Hide the install button
+                installBtn.style.display = 'none';
+            } else {
+                // Manual install instructions for Android
+                alert('Para instalar esta app en Android:\n\n1. Toca el menú (⋮) en Chrome\n2. Selecciona "Instalar app"\n3. Confirma la instalación');
+            }
+        });
+
+        // Listen for successful installation
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('App was installed');
+            installBtn.style.display = 'none';
+            iosInstallBanner.style.display = 'none';
+        });
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Debug information
+        console.log('PWA Installation Script loaded');
+        console.log('User Agent:', navigator.userAgent);
+        console.log('Display Mode:', window.matchMedia('(display-mode: standalone)').matches ? 'standalone' : 'browser');
+    </script>
+</body>
+</html> 
