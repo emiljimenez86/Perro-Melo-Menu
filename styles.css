@@ -362,7 +362,7 @@ a.category-btn {
 }
 
 .btn-agregar {
-    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    background: linear-gradient(135deg, #4caf50, #388e3c);
     color: white;
     border: none;
     padding: 8px 18px;
@@ -375,9 +375,9 @@ a.category-btn {
 }
 
 .btn-agregar:hover {
-    background: linear-gradient(135deg, #b71c1c, #8b0000);
+    background: linear-gradient(135deg, #43a047, #2e7d32);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
 }
 
 .cantidad-controls {
@@ -390,8 +390,7 @@ a.category-btn {
     border: 1px solid #444;
 }
 
-.cantidad-controls .btn-menos,
-.cantidad-controls .btn-mas {
+.cantidad-controls .btn-menos {
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -407,9 +406,28 @@ a.category-btn {
     transition: background 0.2s;
 }
 
-.cantidad-controls .btn-menos:hover,
-.cantidad-controls .btn-mas:hover {
+.cantidad-controls .btn-menos:hover {
     background: #b71c1c;
+}
+
+.cantidad-controls .btn-mas {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #4caf50;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.cantidad-controls .btn-mas:hover {
+    background: #388e3c;
 }
 
 .cantidad-controls .cantidad-num {
@@ -592,8 +610,7 @@ a.category-btn {
     flex-shrink: 0;
 }
 
-.cart-modal-item-actions .cart-modal-btn-menos,
-.cart-modal-item-actions .cart-modal-btn-mas {
+.cart-modal-item-actions .cart-modal-btn-menos {
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -607,9 +624,26 @@ a.category-btn {
     justify-content: center;
 }
 
-.cart-modal-item-actions .cart-modal-btn-mas:hover,
 .cart-modal-item-actions .cart-modal-btn-menos:hover {
     background: #d32f2f;
+}
+
+.cart-modal-item-actions .cart-modal-btn-mas {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #4caf50;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-modal-item-actions .cart-modal-btn-mas:hover {
+    background: #388e3c;
 }
 
 .cart-modal-item-actions .cart-modal-num {
