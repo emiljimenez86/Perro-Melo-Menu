@@ -2,6 +2,7 @@ const CACHE_NAME = 'perro-melo-v1';
 const urlsToCache = [
   './',
   './index.html',
+  './menu.html',
   './styles.css',
   './script.js',
   './manifest.json',

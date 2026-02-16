@@ -65,248 +65,76 @@
             </div>
         </div>
         <h2 class="menu-title">Horario</h2>
-        <p class="hours">Todos los días de 6 PM a 1 AM</p>
+        <p class="hours">Todos los días de 5:30 P.M. a 1:00 A.M.</p>
     </header>
 
-    <!-- Menu Categories -->
+    <!-- Menu Categories: cada categoría abre en página aparte -->
     <section class="menu-categories">
         <div class="category-grid">
-            <button class="category-btn" data-category="perros">
+            <a href="menu.html?categoria=perros" class="category-btn">
                 <i class="fas fa-hotdog"></i>
-                <span>Perros Calientes</span>
-            </button>
-            <button class="category-btn" data-category="salchipapas">
+                <span>Perros</span>
+            </a>
+            <a href="menu.html?categoria=salchipapas" class="category-btn">
                 <i class="fas fa-french-fries"></i>
                 <span>Salchipapas</span>
-            </button>
-            <button class="category-btn" data-category="hamburguesas">
+            </a>
+            <a href="menu.html?categoria=hamburguesas" class="category-btn">
                 <i class="fas fa-hamburger"></i>
                 <span>Hamburguesas</span>
-            </button>
-            <button class="category-btn" data-category="picadas">
+            </a>
+            <a href="menu.html?categoria=picadas" class="category-btn">
                 <i class="fas fa-utensils"></i>
                 <span>Picadas</span>
-            </button>
-            <button class="category-btn" data-category="chuzo">
+            </a>
+            <a href="menu.html?categoria=alitas" class="category-btn">
+                <i class="fas fa-drumstick-bite"></i>
+                <span>Alitas</span>
+            </a>
+            <a href="menu.html?categoria=platano" class="category-btn">
+                <i class="fas fa-leaf"></i>
+                <span>Plátano Melo</span>
+            </a>
+            <a href="menu.html?categoria=asados" class="category-btn">
+                <i class="fas fa-fire"></i>
+                <span>Asados Melos</span>
+            </a>
+            <a href="menu.html?categoria=arepa" class="category-btn">
+                <i class="fas fa-bread-slice"></i>
+                <span>Arepa</span>
+            </a>
+            <a href="menu.html?categoria=chuzo" class="category-btn">
                 <i class="fas fa-drumstick-bite"></i>
                 <span>Chuzo de pollo</span>
-            </button>
-            <button class="category-btn" data-category="adiciones">
+            </a>
+            <a href="menu.html?categoria=adiciones" class="category-btn">
                 <i class="fas fa-plus"></i>
                 <span>Adiciones</span>
-            </button>
+            </a>
         </div>
     </section>
 
-    <!-- Menu Content -->
-    <main class="menu-content">
-        <!-- PERROS Section -->
-        <section id="perros" class="menu-section active">
-            <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>PERRO MELO</h3>
-                        <p class="description">(Ensalada dulce, salchicha tradicional, tocineta, ripio de papa, queso, salsas)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 14.000</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20un%20Perro%20Melo" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>RANCHERO DE LA CASA</h3>
-                        <p class="description">(Ensalada dulce, salchicha ranchera, tocineta, ripio de papa, queso, salsas)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 16.000</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20un%20Ranchero%20de%20la%20Casa" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>URBANO DOG</h3>
-                        <p class="description">(Ensalada dulce, salchicha suiza, tocineta doble, ripio de papa, queso doble, salsas)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 18.000</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20un%20Urbano%20Dog" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- FAB Carrito (visible también en inicio para no perder el pedido al cambiar de categoría) -->
+    <div class="cart-fab" aria-label="Ver mi pedido">
+        <i class="fas fa-cart-shopping"></i>
+        <span class="cart-badge" style="display:none;">0</span>
+    </div>
 
-        <!-- SALCHIPAPAS Section -->
-        <section id="salchipapas" class="menu-section">
-            <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>SALCHIMELITA</h3>
-                        <p class="description">(Papa, salchicha, queso, salsas al gusto)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 16.000</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Salchimelita" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>SALCHIMELA</h3>
-                        <p class="description">(Papa, butifarra, chorizo cóctel, salchicha, tocineta, doble queso, salsas al gusto)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 22.000</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Salchimela" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>SALCHIMELISIMA</h3>
-                        <p class="description">(Papa, butifarra, chorizo cóctel, salchicha ranchera, doble queso, salsas, maíz tierno)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 29.500</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Salchimelisima" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>CHORIMELA</h3>
-                        <p class="description">(Papa, butifarra, chorizo cóctel, chorizo de ternera, doble queso, salsas, maíz tierno)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 29.500</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Chorimela" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
+    <!-- Modal Tu Pedido -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-backdrop"></div>
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Tu Pedido</h2>
+                <button type="button" class="cart-modal-close" aria-label="Cerrar">×</button>
             </div>
-        </section>
-
-        <!-- HAMBURGUESAS Section -->
-        <section id="hamburguesas" class="menu-section">
-            <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="imageProductos/Hamburguesa-Mela-Classic.jpg" alt="Mela Clasic" class="product-image">
-                    </div>
-                    <div class="item-info">
-                        <h3>MELA CLÁSIC</h3>
-                        <p class="description">(Pan artesanal, carne de res 150 gr, tocineta, queso, aros de cebolla, tomate y lechuga fresca, papas a la francesa)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 16.000</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Mela%20Clasic" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>DOBLE MELA</h3>
-                        <p class="description">(Pan artesanal, doble carne de res, doble queso, aros de cebolla, tomate y lechuga fresca, doble tocineta, salsas, papas a la francesa)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 26.000</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Doble%20Mela" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>CALLEJERA MELA</h3>
-                        <p class="description">(Pan dorado, carne de res, salchicha ranchera, doble queso, aros de cebolla, tomate y lechuga fresca, doble tocineta, salsas, papas a la francesa)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 29.500</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20Callejera%20Mela" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
+            <div id="cart-modal-list" class="cart-modal-list"></div>
+            <div class="cart-modal-footer">
+                <div class="cart-modal-total"><strong>Total:</strong> <span id="cart-modal-total">$ 0</span></div>
+                <button type="button" id="cart-modal-send" class="cart-modal-send"><i class="fab fa-whatsapp"></i> Enviar a WhatsApp</button>
             </div>
-        </section>
-
-        <!-- PICADAS Section -->
-        <section id="picadas" class="menu-section">
-            <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>LA PERRA</h3>
-                        <p class="description">(Papas, carne de res, pollo - cerdo - salchicha ranchera, butifarra, chorizo cóctel, maíz tierno, queso, ripio de papas y salsas)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 40.000</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20La%20Perra" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>LA PERRA XL</h3>
-                        <p class="description">(Papa, carne res, carne de cerdo-pollo-, chorizo ternera, butifarra, chorizo cóctel, maíz tierno, queso, ripio de papa, salsas)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 58.000</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20una%20La%20Perra%20XL" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHUZO Section -->
-        <section id="chuzo" class="menu-section">
-            <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>CHUZO DE POLLO</h3>
-                        <p class="description">(Ensalada dulce, papa a la francesa, chorizo cóctel, butifarra, salsas)</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 19.500</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20un%20Chuzo%20de%20Pollo" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ADICIONES Section -->
-        <section id="adiciones" class="menu-section">
-            <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-info">
-                        <h3>ADICIONES X</h3>
-                        <p class="description">Adiciones y extras adicionales</p>
-                    </div>
-                    <div class="item-actions">
-                        <div class="price">$ 4.000</div>
-                        <a href="https://wa.me/+573001708326?text=Hola,%20quiero%20pedir%20Adiciones%20X" class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Pedir Domicilio
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section class="contact-section">
@@ -322,7 +150,7 @@
                 <a href="tel:+573001708326" class="contact-icon phone">
                     <i class="fas fa-phone"></i>
                 </a>
-                <a href="https://instagram.com/PERROMELO_COCINAURBANA" class="contact-icon facebook">
+                <a href="https://instagram.com/perromelo_cocinaurbana" class="contact-icon facebook" title="@perromelo_cocinaurbana">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://wa.me/573001708326" class="contact-icon whatsapp">
@@ -342,6 +170,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="cart.js"></script>
     
     <!-- PWA Installation Script -->
     <script>

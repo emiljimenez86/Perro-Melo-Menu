@@ -1,32 +1,26 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Get all category buttons and menu sections
+    // Get all category buttons and menu sections (solo hay secciones en menu.html por categoría)
     const categoryButtons = document.querySelectorAll('.category-btn');
     const menuSections = document.querySelectorAll('.menu-section');
 
-    // Add click event listeners to category buttons
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const targetCategory = this.getAttribute('data-category');
-            
-            // Remove active class from all buttons and sections
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
-            menuSections.forEach(section => section.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Show target section
-            const targetSection = document.getElementById(targetCategory);
-            if (targetSection) {
-                targetSection.classList.add('active');
-            }
+    // Solo usar lógica de cambio de categoría si hay secciones en la misma página (menús de una sola página)
+    if (menuSections.length > 0) {
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const targetCategory = this.getAttribute('data-category');
+                if (!targetCategory) return;
+                e.preventDefault();
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                menuSections.forEach(section => section.classList.remove('active'));
+                this.classList.add('active');
+                const targetSection = document.getElementById(targetCategory);
+                if (targetSection) targetSection.classList.add('active');
+            });
         });
-    });
-
-    // Set first category as active by default
-    if (categoryButtons.length > 0) {
-        categoryButtons[0].classList.add('active');
+        if (categoryButtons.length > 0 && categoryButtons[0].hasAttribute('data-category')) {
+            categoryButtons[0].classList.add('active');
+        }
     }
 
     // Add smooth scroll behavior for better UX
