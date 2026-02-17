@@ -47,7 +47,13 @@ Un menú digital moderno y atractivo para **Perro Melo Cocina Urbana**, diseñad
 - **CHUZO DE POLLO** - $19.500
 
 ### ➕ Adiciones
-- **ADICIONES X** - $4.000
+- **QUESO** - $4.000
+- **SALCHICHA RANCHERA** - $8.000
+- **PAPAS A LA FRANCESA** - $4.000
+- **MAICITO** - $4.000
+- **TOCINETA** - $4.000
+- **MIX DE CARNES** - $6.000
+- **BUTIFARRA** - $4.000
 
 ## 🚀 Cómo Usar
 

@@ -94,7 +94,7 @@
         var btnAgregar = document.createElement('button');
         btnAgregar.type = 'button';
         btnAgregar.className = 'btn-agregar';
-        btnAgregar.textContent = 'Agregar';
+        btnAgregar.innerHTML = '<i class="fab fa-whatsapp"></i> Agregar para Domicilio';
 
         var controls = document.createElement('div');
         controls.className = 'cantidad-controls';
@@ -203,6 +203,8 @@
             asados: '🥩',
             arepa: '🌽',
             chuzo: '🍗',
+            tacos: '🌮',
+            bebidas: '🥤',
             adiciones: '➕'
         };
         return emojis[cat] || '🍴';
@@ -239,6 +241,10 @@
 
         if (main) {
         document.querySelectorAll('.menu-section .menu-item').forEach(function(item) {
+            var orderBtn = item.querySelector('.order-btn');
+            if (!orderBtn) return;
+            if (orderBtn.classList.contains('order-btn-asado')) return;
+
             var section = item.closest('section.menu-section');
             var cat = section ? section.id : categoria;
             var nameEl = item.querySelector('.item-info h3');
@@ -249,15 +255,34 @@
             var id = productId(cat, name);
 
             var actions = item.querySelector('.item-actions');
-            var orderBtn = item.querySelector('.order-btn');
-            if (!actions || !orderBtn) return;
+            if (!actions) return;
 
             var controls = createCartControls(id, name, price);
             orderBtn.parentNode.replaceChild(controls, orderBtn);
         });
 
         main.addEventListener('click', function(e) {
-            var target = e.target.closest('.btn-agregar');
+            var target = e.target.closest('.order-btn-asado');
+            if (target) {
+                e.preventDefault();
+                var item = target.closest('.menu-item');
+                if (!item) return;
+                var nameEl = item.querySelector('.item-info h3');
+                var priceEl = item.querySelector('.item-actions .price');
+                var radioAcom = item.querySelector('.asado-acompanamiento:checked');
+                var radioEnsalada = item.querySelector('.asado-ensalada:checked');
+                if (!nameEl || !priceEl || !radioAcom || !radioEnsalada) return;
+                var name = nameEl.textContent.trim();
+                var price = parsePrice(priceEl);
+                var acompanamiento = radioAcom.value;
+                var ensalada = radioEnsalada.value;
+                var fullName = name + ' - ' + acompanamiento + ', ' + ensalada;
+                var id = productId('asados', fullName);
+                addToCart(id, fullName, price, 1);
+                updateFabBadge();
+                return;
+            }
+            target = e.target.closest('.btn-agregar');
             if (target) {
                 var wrap = target.closest('.cart-controls');
                 if (!wrap) return;
